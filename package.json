@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./rmDist.js&&node run.js"
+    "start": "node ./modules/rmDist.js&&node run.js"
   },
   "repository": {
     "type": "git",

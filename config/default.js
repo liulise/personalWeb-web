@@ -60,5 +60,14 @@ module.exports = {
 		    API:JSON.stringify('http://192.168.8.11/bbs_api/')
 		}),
 		...message.getHtml()
-	]
+	],
+	devtool:'cheap-module-source-map',
+//	vue:{
+//	    loaders: {
+//	        css: ExtractTextPlugin.extract(
+//	            "style-loader",
+//	            "css-loader?sourceMap"
+//	        )
+//	    }
+//	}
 }

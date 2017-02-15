@@ -1,3 +1,3 @@
 module.exports={
-	b:456
+	devtool:'source-map'
 }
