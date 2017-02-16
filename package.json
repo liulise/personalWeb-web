@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./modules/rmDist.js&&node run.js"
+    "build": "set NODE_ENV=build&&node ./modules/rmDist.js&&webpack",
+    "dev":"set NODE_ENV=dev&&node ./modules/rmDist.js&&webpack-dev-server"
   },
   "repository": {
     "type": "git",

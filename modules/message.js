@@ -28,7 +28,7 @@ class Message {
 			_html.push(new htmlWebpackPlugin({
 				template:path.join(this._path,con,'index.html'),
 				filename:`${con}/index.html`,
-				chunks:[con]
+				chunks:['commons',con]
 			}));
 		});
 		return _html;

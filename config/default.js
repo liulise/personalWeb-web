@@ -1,9 +1,9 @@
 var path = require('path');
-var webpack=require('webpack');
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var Message=require('../modules/message.js');
+var Message = require('../modules/message.js');
 
-var message=new Message();
+var message = new Message();
 
 module.exports = {
 	entry: message.getEntries(),
@@ -13,61 +13,81 @@ module.exports = {
 		chunkFilename: '[id][hash].js'
 	},
 	module: {
-		loaders: [{
-			test:/\.js$/,
-			loader:'babel-loader',
-			exclude:/node_modules/
+		rules: [{
+			test: /\.js$/,
+			use: ['babel-loader'],
+			exclude: [
+				path.resolve("node_modules")
+			]
 		}, {
 			test: /\.css$/,
-			loader:  ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+			use: ExtractTextPlugin.extract({
+				fallback: 'style-loader',
+				use: ['css-loader']
+			})
 		}, {
 			test: /\.vue$/,
-			loader: 'vue'
+			use: [{
+				loader: 'vue-loader',
+				options: {
+					vue: {
+						loaders: {
+							css: ExtractTextPlugin.extract({
+								fallback: 'style-loader',
+								use: 'css-loader'
+							})
+						}
+					}
+				}
+			}],
 		}, {
 			test: /\.(png|jpg|gif)$/,
-			loader: 'url?limit=8192&&name=static/images/[name]_[hash].[ext]'
+			use: [{
+				loader: 'url-loader',
+				options: {
+					limit: 8192,
+					name: 'static/images/[name]_[hash].[ext]'
+				}
+			}]
 		}, {
 			test: /\.html$/,
-			loader: 'html-withimg-loader'
+			use: ['html-withimg-loader']
 		}, {
 			test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-			loader: 'file-loader?name=static/font/[name]_[hash].[ext]'
+			use: [{
+				loader: 'file-loader',
+				options: {
+					name: 'static/font/[name]_[hash].[ext]'
+				}
+			}]
 		}]
 	},
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
-		    name: 'commons',
-		    filename: '[name]/bundle.js',
-		    minChunks: 2,
-		}),
-		new webpack.optimize.UglifyJsPlugin({
-			compress:{
-				warnings:false
-			}
+			name: 'commons',
+			filename: '[name]/bundle.js',
+			minChunks: 2,
 		}),
 		new webpack.ProvidePlugin({
-			$:'jquery',
-			jQuery:'jquery',
-			'window.jquery':'jquery',
-			'window.$':'jquery',
-			vue:'vue/dist/vue.common.js',
-			Vue:'vue/dist/vue.common.js',
-			element:'element-ui'
+			$: 'jquery',
+			jQuery: 'jquery',
+			'window.jquery': 'jquery',
+			'window.$': 'jquery',
+			vue: 'vue/dist/vue.common.js',
+			Vue: 'vue/dist/vue.common.js',
+			element: 'element-ui'
 		}),
 		new ExtractTextPlugin('[name]/styles.css'),
 		new webpack.DefinePlugin({
-		    _PRODUC_:JSON.stringify(JSON.parse('false')),
-		    API:JSON.stringify('http://192.168.8.11/bbs_api/')
+			_PRODUC_: JSON.stringify(JSON.parse('false')),
+			API: JSON.stringify('http://192.168.8.11/bbs_api/')
 		}),
+		new webpack.HotModuleReplacementPlugin(),
 		...message.getHtml()
 	],
-	devtool:'cheap-module-source-map',
-//	vue:{
-//	    loaders: {
-//	        css: ExtractTextPlugin.extract(
-//	            "style-loader",
-//	            "css-loader?sourceMap"
-//	        )
-//	    }
-//	}
+	resolve: {
+		modules: [
+			"node_modules", path.resolve("node_modules")
+		]
+	}
 }
