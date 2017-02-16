@@ -6,7 +6,7 @@ module.exports = {
 	devServer:{
 		contentBase:'./webapp',
 		port:5000,
-//		hot:true,
+		hot:true,
 		inline:true
 	}
 }
