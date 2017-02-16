@@ -11,7 +11,6 @@ module.exports = {
 		path: path.resolve('webapp'),
 		filename: '[name]/[name].js',
 		chunkFilename: '[id][hash].js',
-//		publicPath:'http://localhost:5000'
 	},
 	module: {
 		rules: [{

@@ -7,6 +7,7 @@ module.exports = {
 		contentBase:'./webapp',
 		port:5000,
 		hot:true,
-		inline:true
+		inline:true,
+		publicPath:'http://localhost:5000'
 	}
 }
