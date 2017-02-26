@@ -1,9 +1,3 @@
 {
- "presets": ['es2015'],
- "plugins": [["component", [
-    {
-      "libraryName": "element-ui",
-      "styleLibraryName": "theme-default"
-    }
-  ]]]
+ "presets": ['es2015']
 }

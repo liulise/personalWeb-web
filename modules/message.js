@@ -35,4 +35,4 @@ class Message {
 	}
 }
 
-module.exports=Message;
+module.exports=new Message();

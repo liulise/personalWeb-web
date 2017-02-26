@@ -1,9 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var Message = require('../modules/message.js');
-
-var message = new Message();
+var message = require('../modules/message.js');
 
 module.exports = {
 	entry: message.getEntries(),
@@ -26,6 +24,12 @@ module.exports = {
 				use: ['css-loader']
 			})
 		}, {
+			test: /\.scss/,
+			use: ExtractTextPlugin.extract({
+				fallback: 'style-loader',
+				use: ['css-loader','sass-loader']
+			})
+		}, {
 			test: /\.vue$/,
 			use: [{
 				loader: 'vue-loader',
@@ -35,6 +39,10 @@ module.exports = {
 							css: ExtractTextPlugin.extract({
 								fallback: 'style-loader',
 								use: 'css-loader'
+							}),
+							scss: ExtractTextPlugin.extract({
+								fallback: 'style-loader',
+								use: ['css-loader','sass-loader']
 							})
 						}
 					}
