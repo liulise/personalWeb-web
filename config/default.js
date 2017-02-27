@@ -9,6 +9,7 @@ module.exports = {
 		path: path.resolve('webapp'),
 		filename: '[name]/[name].js',
 		chunkFilename: '[id][hash].js',
+		publicPath:'../'
 	},
 	module: {
 		rules: [{

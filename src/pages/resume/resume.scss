@@ -1,5 +1,23 @@
-$a:16px;
+@import "../../common/scss/common.scss";
+@import "../../common/scss/box.scss";
 
-div{
-    font-size: $a;
+#mainApp{
+    height: 100%;
+}
+.Presume_introduce{
+    width: 100%;
+    height: 100%;
+    float: left;
+    
+    .content{
+        @include toRem(margin-left,300);
+        height: 100%;
+        background: rgba(191,233,219,0.5);
+        overflow: hidden;
+        
+        .article{
+            margin: 30px;
+            @include boxCss(rgba(255,255,255,0.8),15px,-2px 0 9px 5px #78B9A4);
+        }
+    }
 }

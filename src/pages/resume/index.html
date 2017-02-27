@@ -3,13 +3,21 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<!--[if lt IE 9]> 
 			<meta http-equiv="REFRESH" content="0; URL=http://outdatedbrowser.com/en">
 		<![endif]-->
 	</head>
 
 	<body>
-		#include("../../common/templates/left_aside.html")
+		<div id="mainApp" class="clear">
+			<section class="Presume_introduce">
+				
+				<router-view class="content"></router-view>
+			</section>
+			
+			#include("../../common/templates/left_aside.html")
+		</div>
 	</body>
 
 </html>

@@ -1,4 +1,3 @@
-require('../common.css');
-require('../common.js');
+import "../remReset.js";
+import "./left_aside.scss"
 
-require('./left_aside.css');

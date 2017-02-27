@@ -1,0 +1,54 @@
+@import "../scss/common.scss";
+@import "../scss/box.scss";
+
+html{
+    background: url(../images/bg.jpg) no-repeat ;
+    background-size: cover;
+}
+
+#TleftAside{
+    @include toRem(width,300);
+    height: 100%;
+    float: left;
+    margin-left: -100%;
+    background: #BAE492;
+    opacity: 0.93;
+    .logo{
+        text-align: center;
+        
+        figcaption{
+            text-align: left;
+            padding-left: 10px;
+            font-size: 40px;
+            color: #ffffff;
+        }
+    }
+    .logo img{
+        border-radius: 50%;
+        @include toRem(width,140);
+        @include toRem(height,140);
+        @include toRem(padding-top,50);
+    }
+    .router{
+        @include toRem(width,250);
+        width: 2.44141rem;
+        padding-bottom: 20px;
+        margin: auto;
+        margin-top: 20px;
+        @include boxCss(#FFFFFF,23px,-2px 0 9px 5px #78B9A4);
+        
+        ul{
+            padding: 10px;
+            text-align: center;
+            li{
+                @include toRem(height,50);
+                border-bottom: 1px dashed #cecece;
+                font-size: 20px;
+                @include toRem(line-height,65);
+            }
+            a{
+                color: #cdccdc;
+            }
+        }
+    }
+}
