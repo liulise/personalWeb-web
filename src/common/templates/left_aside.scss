@@ -1,5 +1,7 @@
 @import "../scss/common.scss";
 @import "../scss/box.scss";
+@import "../scss/fontReset.scss";
+@import "../scss/animate.scss";
 
 html{
     background: url(../images/bg.jpg) no-repeat ;
@@ -27,7 +29,7 @@ html{
         border-radius: 50%;
         @include toRem(width,140);
         @include toRem(height,140);
-        @include toRem(padding-top,50);
+        @include toRem(margin-top,50);
     }
     .router{
         @include toRem(width,250);
@@ -52,3 +54,4 @@ html{
         }
     }
 }
+

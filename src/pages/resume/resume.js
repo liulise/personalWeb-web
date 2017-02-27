@@ -14,7 +14,8 @@ const router = new VueRouter({
   routes: [
     {path:'/homePage',component:homePage},
     {path:'/article',component:article},
-    {path:'/resume',component:resume}
+    {path:'/resume',component:resume},
+    {path:'*',redirect:'/homePage'}
   ]
 })
 
