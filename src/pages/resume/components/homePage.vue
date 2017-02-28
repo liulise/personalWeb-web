@@ -1,16 +1,18 @@
 <style>
-	
+
 </style>
 
 <template>
-	<div>{{mess}}</div>
+	<transition name="activeElementRight" appear>
+		<div>{{mess}}</div>
+	</transition>
 </template>
 
 <script>
 	export default {
-		data(){
+		data() {
 			return {
-				mess:'homePage'
+				mess: 'homePage'
 			}
 		}
 	}

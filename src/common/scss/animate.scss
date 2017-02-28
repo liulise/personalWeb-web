@@ -1,6 +1,6 @@
 @import "./prefix.scss";
 
-$direction:(Top:(0,-50px),Bottom:(0,50px),Left:(-50px,0),Right:(50px 0));
+$direction:(Top:(0,-50px),Bottom:(0,50px),Left:(-50px,0),Right:(50px,0));
 
 @each $i,$val in $direction{
 	.activeElement#{$i}-enter-active, .activeElement#{$i}-leave-active {

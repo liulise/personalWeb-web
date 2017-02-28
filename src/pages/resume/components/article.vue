@@ -3,19 +3,21 @@
 </style>
 
 <template>
-	<div>
-		<section>
-			<article class="article">
-				123
-			</article>
-			<article class="article">
-				123
-			</article>
-			<article class="article">
-				123
-			</article>
-		</section>
-	</div>
+	<transition name="activeElementRight" appear>
+		<div>
+			<section>
+				<article class="article">
+					123
+				</article>
+				<article class="article">
+					123
+				</article>
+				<article class="article">
+					123
+				</article>
+			</section>
+		</div>
+	</transition>
 </template>
 
 <script>
