@@ -1,9 +1,9 @@
-require("../../common/templates/left_aside.js");
-
-import './resume.scss';
-
+import "../../common/templates/left_aside.js";
+import {getSingle} from "../../common/remReset.js";
 import VueRouter from "vue-router";
 vue.use(VueRouter);
+
+import './resume.scss';
 
 import article from "./components/article.vue";
 import homePage from "./components/homePage.vue";
@@ -23,6 +23,14 @@ var user = new Vue({
 	router
 });
 
+
+
+
+
+
+
+
+
 (function() {
 	var Snow = (function() {
 		function Snow(count, size, speed) {
@@ -34,7 +42,16 @@ var user = new Vue({
 			};
 			this.setSize();
 			this.draw();
+			this.resize();
 		}
+		Snow.prototype.resize = function() {
+			window.addEventListener('resize',getSingle(()=>{
+				clearInterval(this.ticker);
+				this.ticker=null;
+				this.setSize();
+				this.draw();		
+			},500));
+		};
 		Snow.prototype.setSize = function() {
 			this.canvas.width = window.innerWidth;
 			this.canvas.height = window.innerHeight;

@@ -1,10 +1,12 @@
 <style lang="sass">
 	@import "../../../common/scss/box.scss";
 	@import "../../../common/scss/fontReset.scss";
-	.cover_resume {
+	.Ccover_resume {
 		@include boxCss(rgba(255, 255, 255, 0.8), 15px);
 		position: absolute;
 		$val: 20px;
+		opacity:0.8;
+		
 		@each $name in left,
 		right,
 		top,
@@ -21,7 +23,7 @@
 <template>
 	<transition name="activeElementRight" appear>
 		<div>
-			<section class="cover_resume">
+			<section class="Ccover_resume">
 
 			</section>
 		</div>

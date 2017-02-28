@@ -13,8 +13,8 @@ html{
     height: 100%;
     float: left;
     margin-left: -100%;
-    background: #BAE492;
-    opacity: 0.93;
+    background: #241D20;
+    opacity: 0.8;
     .logo{
         text-align: center;
         
@@ -22,7 +22,6 @@ html{
             text-align: left;
             padding-left: 10px;
             font-size: 40px;
-            color: #ffffff;
         }
     }
     .logo img{
@@ -37,7 +36,7 @@ html{
         padding-bottom: 20px;
         margin: auto;
         margin-top: 20px;
-        @include boxCss(#FFFFFF,23px,-2px 0 9px 5px #78B9A4);
+        @include boxCss(#DCDDE6,23px,-2px 0 9px 5px #78B9A4);
         
         ul{
             padding: 10px;
@@ -48,9 +47,10 @@ html{
                 font-size: 20px;
                 @include toRem(line-height,65);
             }
-            a{
-                color: #cdccdc;
-            }
+        }
+        
+        a{
+            color: #AC938C;
         }
     }
 }
