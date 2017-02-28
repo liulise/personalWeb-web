@@ -1,0 +1,11 @@
+@import "./fontReset.scss";
+
+%fontHeader {
+    @include toRem(font-size,30);
+    color: #254665;
+}
+
+%fontContent {
+    @include toRem(font-size,20);
+    color: #62605D;
+}
