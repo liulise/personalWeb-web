@@ -26,7 +26,13 @@ function remReset(){
 	rem=clientW/10;
 	dom.style['font-size']=rem+'px';
 }
+
+function pxToRem(px){
+	return px/rem;
+}
+
+
 remReset();
 window.addEventListener('resize',remReset);
 
-export {getSingle};
+export {getSingle,pxToRem};

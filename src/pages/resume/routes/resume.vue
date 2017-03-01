@@ -36,6 +36,16 @@
 			p {
 				@extend %fontContent;
 			}
+			
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		figure{
+			@include toRem(width,200);
+		    @include toRem(height,150);
+			float: left;    
+			margin-right: 10px;
 		}
 		.sub {
 			@include toRem(margin-left, 60);
@@ -57,6 +67,13 @@
 
 					<article>
 						<header>项目经验</header>
+						
+						<picturebox :width="150">
+							<img src="../../../common/images/museum1.png" alt="" />		
+							<img src="../../../common/images/museum2.png" alt="" />		
+							<img src="../../../common/images/museum3.png" alt="" />
+						</picturebox>
+						
 						<p><time>2016.01-2016.11</time> 智慧博物馆管理平台</p>
 						<p>1. 根据UI制作符合预期的页面，并根据产品的需求制作相应逻辑，并连通后台 </p>
 						<p>2. 引进vue(1.x),webpack(1.x)</p>
@@ -105,11 +122,16 @@
 </template>
 
 <script>
+	import picturebox from "../components/picturebox.vue";
+	
 	export default {
 		data() {
 			return {
 				mess: 'resume'
 			}
+		},
+		components:{
+			picturebox
 		}
 	}
 </script>
