@@ -5,9 +5,9 @@ vue.use(VueRouter);
 
 import './resume.scss';
 
-import article from "./components/article.vue";
-import homePage from "./components/homePage.vue";
-import resume from "./components/resume.vue";
+import article from "./routes/article.vue";
+import homePage from "./routes/homePage.vue";
+import resume from "./routes/resume.vue";
 
 const router = new VueRouter({
 	routes: [

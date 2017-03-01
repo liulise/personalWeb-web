@@ -2,8 +2,7 @@
 	@import "../../../common/scss/box.scss";
 	@import "../../../common/scss/fontReset.scss";
 	@import "../../../common/scss/font.scss";
-	
-	%boxLay{
+	%boxLay {
 		position: absolute;
 		left: 20px;
 		right: 20px;
@@ -11,14 +10,12 @@
 		bottom: 20px;
 	}
 	
-	.Ccover_resume {
+	.Rcover_resume {
 		@include boxCss(rgba(255, 255, 255, 0.8), 15px);
 		$val: 20px;
 		opacity: 0.8;
-		
 		@extend %boxLay;
-		
-		.main{
+		.main {
 			@extend %boxLay;
 			overflow-y: scroll;
 		}
@@ -36,6 +33,32 @@
 			p {
 				@extend %fontContent;
 			}
+			figure {
+				float: left;
+				width: 150px;
+				margin-right: 10px;
+				img {
+					width: 100%;
+					max-height: 140px;
+					transition: all 0.5s;
+					&:hover {
+						box-shadow: -2px 0 9px 5px #78B9A4;
+					}
+					cursor:pointer;
+					
+					@at-root {
+						img.active{
+						    width: 85% !important;
+						    height: auto !important;
+						    left: 0 !important;
+						    top: 50px !important;
+						    right: 0;
+						    margin: auto;
+						    max-width: 1024px;
+					    }
+					}
+				}
+			}
 		}
 		.sub {
 			@include toRem(margin-left, 60);
@@ -46,7 +69,7 @@
 <template>
 	<transition name="activeElementRight" appear>
 		<div>
-			<section class="Ccover_resume">
+			<section class="Rcover_resume">
 				<div class="main">
 					<article>
 						<header>教育背景</header>
@@ -55,22 +78,34 @@
 						</p>
 					</article>
 
-					<article>
+					<article class="clear">
 						<header>项目经验</header>
+
+						<figure>
+							<img src="../../../common/images/museum1.png" alt="" @click.stop="biggerImg($event)" />
+						</figure>
+
 						<p><time>2016.01-2016.11</time> 智慧博物馆管理平台</p>
 						<p>1. 根据UI制作符合预期的页面，并根据产品的需求制作相应逻辑，并连通后台 </p>
 						<p>2. 引进vue(1.x),webpack(1.x)</p>
 						<p>3. 攻克多个问题，例如：制作table，其表头浮动并具有多种功能，表格内部可以伸缩隐藏，自 适应；瀑布流图片懒加载；svg与图标关联，各个形状各异的svg图标中间放置不同设备图标；</p>
 					</article>
 
-					<article class="sub">
+					<article class="sub clear">
+						<figure>
+							<img src="../../../common/images/country1.png" alt="" @click.stop="biggerImg($event)" />
+						</figure>
+
 						<p><time>2016.07-2016.07</time> 预防性保护国家平台 </p>
 						<p>1. 单页面，全屏滚动 </p>
 						<p>2. echarts地图与其他自定义组件联动 </p>
 						<p>3. 第二屏含有大量数据和echarts渲染，按需加载</p>
 					</article>
 
-					<article class="sub">
+					<article class="sub clear">
+						<figure>
+							<img src="../../../common/images/bbs1.png" alt="" @click.stop="biggerImg($event)" />
+						</figure>
 						<p><time>2016.11-2017.01</time> bbs博客系统</p>
 						<p>1. 使用webpack构建脚手架 </p>
 						<p>2. 引入vue2.0,elementUi，制定开发规范 </p>
@@ -108,8 +143,49 @@
 	export default {
 		data() {
 			return {
-				mess: 'resume'
+				cloneImg:null
 			}
+		},
+		mounted(){
+			document.onclick=()=>{
+				if(!this.cloneImg)return;
+				document.body.removeChild(this.cloneImg);
+				this.cloneImg=null;
+			}
+		},
+		methods: {
+			biggerImg(e) {
+				if(this.cloneImg)return;
+				
+				var e = window.event || e;
+				var element = e.target || e.srcElement;
+				var {x,y}=offset(element);
+
+				var cloneImg = element.cloneNode();
+				cloneImg.style.cssText=`transition:all,0.5s;z-index:5;position:absolute;left:${x}px;top:${y}px;width:${element.offsetWidth}px;height:${element.offsetHeight}px;`;
+				
+				this.cloneImg=cloneImg;
+				document.body.appendChild(cloneImg);
+				
+				setTimeout(()=>{
+					cloneImg.className="active";
+				},0)
+			}
+		}
+	}
+
+	function offset(dom) {
+		var x = 0,
+			y = 0;
+
+		while(dom.offsetParent) {
+			x += dom.offsetLeft;
+			y += dom.offsetTop;
+			dom = dom.offsetParent;
+		}
+		return {
+			x,
+			y
 		}
 	}
 </script>
