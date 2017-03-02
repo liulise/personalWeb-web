@@ -2,56 +2,152 @@
 @import "../scss/box.scss";
 @import "../scss/fontReset.scss";
 @import "../scss/animate.scss";
+@import "../scss/font.scss";
 
-html{
-    background: url(../images/bg.jpg) no-repeat ;
+html {
+    background: url("../images/bg.jpg") no-repeat;
     background-size: cover;
 }
 
-#TleftAside{
+#TleftAside {
     @include toRem(width,300);
     height: 100%;
     float: left;
     margin-left: -100%;
     background: #241D20;
     opacity: 0.8;
-    .logo{
+
+    ul {
+        padding: 10px;
         text-align: center;
-        
-        figcaption{
+        li {
+            border-bottom: 1px dashed #9E9393;
+            font-size: 20px;
+            @include toRem(line-height,40);
+        }
+    }
+
+    .logo {
+        text-align: center;
+
+        figcaption {
             text-align: left;
             padding-left: 10px;
             font-size: 40px;
         }
     }
-    .logo img{
+    .logo img {
         border-radius: 50%;
         @include toRem(width,140);
         @include toRem(height,140);
         @include toRem(margin-top,50);
     }
-    .router{
+    .router {
         @include toRem(width,250);
         width: 2.44141rem;
         padding-bottom: 20px;
-        margin: auto;
-        margin-top: 20px;
+        margin: 20px auto auto;
         @include boxCss(#DCDDE6,23px,-2px 0 9px 5px #78B9A4);
-        
-        ul{
-            padding: 10px;
-            text-align: center;
-            li{
-                @include toRem(height,50);
-                border-bottom: 1px dashed #cecece;
-                font-size: 20px;
-                @include toRem(line-height,65);
-            }
+
+        a {
+            color: #AC938C;
         }
         
-        a{
-            color: #AC938C;
+        .router-link-active{
+            color: #0C9053;
+        }
+    }
+
+    .supplement {
+        @include boxCss(#DCDDE6,null,null);
+        @include toRem(width,220);
+        @include toRem(padding,20);
+        margin: auto;
+        @include toRem(margin-top,20);
+        @extend %fontContent;
+
+        li {
+            @include toRem(font-size,16);
+        }
+    }
+
+}
+@media screen and (max-width: 800px) {
+    #TleftAside {
+        width: 100%;
+        height: 140px;
+        position: absolute;
+        top: 0;
+        margin-left: 0;
+        display: table;
+
+        .logo {
+            display: table-cell;
+            vertical-align: middle;
+            width: 150px;
+
+            img {
+                width: 120px;
+                height: 120px;
+                margin-top: 0;
+            }
+            figcaption {
+                display: none;
+            }
+        }
+
+        section {
+            display: inline-block;
+
+            &.router {
+                width: auto;
+                padding-bottom: 0;
+                margin-top: 30px;
+                box-shadow: none;
+
+                li {
+                    float: left;
+                    margin-right: 10px;
+                    border-bottom: none;
+                    line-height: 30px;
+                }
+            }
+
+            &.supplement {
+                width: auto;
+                padding: 0;
+                display: inline;
+
+                ul {
+                    padding: 0;
+
+                    li {
+                        float: left;
+                        color: #ffffff;
+                        font-size: 12px;
+                        margin-right: 5px;
+                    }
+                }
+            }
         }
     }
 }
 
+
+@media screen and (max-width: 380px) {
+    #TleftAside {
+        text-align: center;
+        
+        section.supplement{
+            
+            ul li{
+                float: none;
+                display: inline-block;
+            }
+        }
+        
+        .logo {
+            display: none;
+        }
+    }
+}

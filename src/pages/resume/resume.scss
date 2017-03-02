@@ -28,3 +28,18 @@
         }
     }
 }
+
+@media screen and (max-width:800px){
+    .Presume_introduce{
+        margin-top: 140px;
+        position: absolute;
+        top: 140px;
+        bottom: 0;
+        height: auto;
+        margin-top: auto;
+        
+        .content{
+            margin-left: auto;
+        }
+    }
+}
