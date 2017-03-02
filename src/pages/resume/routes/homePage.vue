@@ -4,7 +4,9 @@
 
 <template>
 	<transition name="activeElementRight" appear>
-		<div>{{mess}}</div>
+		<div>
+			<img class="delete" src="../../../common/images/Wait.jpg" alt="" />
+		</div>
 	</transition>
 </template>
 
@@ -12,7 +14,6 @@
 	export default {
 		data() {
 			return {
-				mess: 'homePage'
 			}
 		}
 	}
