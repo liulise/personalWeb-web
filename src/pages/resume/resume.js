@@ -23,7 +23,9 @@ var user = new Vue({
 	el: '#mainApp',
 	router,
 	created(){
-		
+//		this.$http.get('http://localhost:3000/content').then((data)=>{
+//			console.log(data.data);
+//		});
 	},
 	mounted(){
 		new Snow({container:document.getElementById('snow'),count:300, size:0.5, speed:1});

@@ -59,12 +59,13 @@ table {
 /**
  * 原子类    
  * */
-
+.clear{
+    zoom: 1;
+}
 .clear:after{
     clear: both;
     display: block;
-    zoom: 1;
-    height: 1;
+    height: 0 !important;
     content: '';
 }
 
