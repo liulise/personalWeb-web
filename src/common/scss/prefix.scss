@@ -1,7 +1,0 @@
-@mixin autoPrefix($name,$val...){
-    #{$name}:$val;
-    -ms-#{$name}:$val;     /* IE 9 */
-    -moz-#{$name}:$val;    /* Firefox */
-    -webkit-#{$name}:$val; /* Safari 和 Chrome */
-    -o-#{$name}:$val; 
-}

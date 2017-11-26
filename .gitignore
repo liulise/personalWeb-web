@@ -1,4 +1,3 @@
+node_modules/
 .git
-/node_modules/
-webapp/
-.project
+/dist
