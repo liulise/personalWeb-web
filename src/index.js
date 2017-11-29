@@ -1,3 +1,1 @@
-export default {
-  a: 123
-};
+const a = 123;

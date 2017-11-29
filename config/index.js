@@ -5,5 +5,5 @@ const isDevelop = NODE_ENV === 'develop';
 module.exports = {
   rootSrc: path.resolve('src'),
   distSrc: path.resolve('dist'),
-  publicPath: isDevelop ? '' : '/'
+  publicPath: isDevelop ? '/' : ''
 };
