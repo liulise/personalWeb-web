@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && set NODE_ENV=build&&webpack",
+    "build": "rimraf dist && set NODE_ENV=production&&webpack",
     "dev": "rimraf dist && set NODE_ENV=develop&&webpack-dev-server"
   },
   "repository": {
@@ -37,6 +37,8 @@
     "webpack-dev-server": "^2.9.5"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^3.3.7",
+    "vue": "^2.5.9"
   }
 }
