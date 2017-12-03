@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
-const extractPlugin = new extractTextPlugin({ filename: 'static/css/[name].css' });
+const extractPlugin = new extractTextPlugin({ filename: 'static/css/[name].[contenthash:8].css' });
 
 module.exports = {
   // babel-polyfill解决promise等API
@@ -15,7 +15,7 @@ module.exports = {
   output: {
     // webpack打包的模块均以该值作为目录
     path: config.distSrc,
-    filename: 'js/[name].js',
+    filename: 'js/[name].[chunkhash].js',
     chunkFilename: "js/[id].js",
     publicPath: '/',
   },
@@ -60,7 +60,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 9000,
-          name: 'static/images/[name].[ext]'
+          name: 'static/images/[name].[hash:8].[ext]'
         },
       },
 
@@ -69,7 +69,7 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: 'static/fonts/[name].[ext]'
+          name: 'static/fonts/[name].[hash:8].[ext]'
         }
       }
     ]
