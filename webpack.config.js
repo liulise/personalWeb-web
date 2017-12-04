@@ -1,5 +1,7 @@
 const path = require('path');
 const config = require('./config');
+const manifest = require('./vendor-manifest.json');
+
 const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
@@ -7,9 +9,8 @@ const extractTextPlugin = require('extract-text-webpack-plugin');
 const extractPlugin = new extractTextPlugin({ filename: 'static/css/[name].[contenthash:8].css' });
 
 module.exports = {
-  // babel-polyfill解决promise等API
   entry: {
-    index: ['babel-polyfill', path.join(config.rootSrc, 'index.js')]
+    index: path.join(config.rootSrc, 'index.js')
   },
 
   output: {
@@ -102,6 +103,11 @@ module.exports = {
 
     new webpack.DefinePlugin({
       env: config.NODE_ENV
+    }),
+
+    new webpack.DllReferencePlugin({
+      manifest,
+      context: __dirname
     })
   ],
 
