@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && set NODE_ENV=production&&webpack",
+    "predev": "webpack --config webpack.dll.config.js",
     "dev": "rimraf dist && set NODE_ENV=develop&&webpack-dev-server"
   },
   "repository": {

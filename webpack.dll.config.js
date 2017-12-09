@@ -4,7 +4,11 @@ const config = require('./config');
 
 module.exports = {
   entry: {
+<<<<<<< HEAD
     vendor: ['babel-polyfill', 'jquery', 'lodash']
+=======
+    vendor: ['babel-polyfill']
+>>>>>>> master
   },
 
   output: {

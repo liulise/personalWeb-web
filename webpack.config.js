@@ -16,7 +16,7 @@ module.exports = {
     // webpack打包的模块均以该值作为目录
     path: config.distSrc,
     filename: 'js/[name].[chunkhash].js',
-    chunkFilename: "js/[id].js",
+    chunkFilename: 'js/[id].js',
     publicPath: '/',
   },
 
@@ -25,7 +25,7 @@ module.exports = {
       // js loader
       {
         test: /\.js$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         include: [config.rootSrc],
         exclude: [/node_modules/]
       },
@@ -35,7 +35,7 @@ module.exports = {
         test: /\.css$/,
         include:[config.rootSrc] ,
         use: extractPlugin.extract({
-          fallback: "style-loader",
+          fallback: 'style-loader',
           use: [
             {
               loader: 'css-loader',
@@ -47,7 +47,7 @@ module.exports = {
               loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
-                plugins: [require("autoprefixer")({ browsers: 'ie >= 9' })]
+                plugins: [require('autoprefixer')({ browsers: 'ie >= 9' })]
               }
             }
           ]
@@ -89,7 +89,7 @@ module.exports = {
     }]),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
+      name: 'vendor',
       minChunks: 2                    // 当至少2个模块包含js库时，将其打包为公共库vendor
     }),
 
@@ -124,6 +124,10 @@ module.exports = {
     alias: {
       'src': config.rootSrc,
     }
+  },
+
+  externals: {
+    'lodash': '_'           // externals中不会被webpack打包，_为lodash库暴露到全局的变量
   },
 
   devtool: config.devtool

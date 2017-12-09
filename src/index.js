@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import 'lodash';
 import './assets/css/index.css';                    // 使用 css-loader 只能处理相对路径的文件
+=======
+import _ from 'lodash';
+import 'src/assets/css/index.css';                    // 使用 css-loader 只能处理相对路径的文件
+>>>>>>> master
 
 // 在js中如果想要获取图片地址，只能手动import，所以尽量使用背景和CDN
-import imgSrc from "./assets/images/bg.jpg";
+import imgSrc from "src/assets/images/bg.jpg";
 
 console.log(imgSrc);
 
@@ -22,3 +27,5 @@ if (env === 'develop')                // 通过 DefinePlugin 去除冗余代码
 else {
   console.log('production');
 }
+
+console.log(_);

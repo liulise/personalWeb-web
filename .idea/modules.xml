@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Stamsel-Frontend/.idea/Stamsel-Frontend.iml" filepath="$PROJECT_DIR$/../Stamsel-Frontend/.idea/Stamsel-Frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fork/mk-docs/.idea/mk-docs.iml" filepath="$PROJECT_DIR$/../fork/mk-docs/.idea/mk-docs.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/personalWeb-web.iml" filepath="$PROJECT_DIR$/.idea/personalWeb-web.iml" />
     </modules>
   </component>

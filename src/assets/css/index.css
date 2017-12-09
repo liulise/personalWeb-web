@@ -1,4 +1,5 @@
-@import './key.css';
+/*~: 表示从node_modules处查找，src为绝对路径*/
+@import '~src/assets/css/key.css';
 
 div {
     width: 200px;
