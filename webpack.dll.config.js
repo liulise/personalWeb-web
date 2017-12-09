@@ -4,7 +4,7 @@ const config = require('./config');
 
 module.exports = {
   entry: {
-    vendor: ['babel-polyfill', 'jquery', 'lodash', 'vue', 'vuex', 'vue-router']
+    vendor: ['babel-polyfill']
   },
 
   output: {
