@@ -1,8 +1,7 @@
 const path = require('path');
 const config = require('./config');
-const manifest = require('./vendor-manifest.json');
-
 const webpack = require('webpack');
+const manifest = require('./vendor-manifest.json');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');

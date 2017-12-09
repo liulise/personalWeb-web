@@ -1,10 +1,10 @@
-var path = require("path");
-var webpack = require("webpack");
+const path = require("path");
+const webpack = require("webpack");
 const config = require('./config');
 
 module.exports = {
   entry: {
-    vendor: ['babel-polyfill', 'jquery', 'lodash', 'vue', 'vuex', 'vue-router']
+    vendor: ['babel-polyfill', 'jquery', 'lodash']
   },
 
   output: {
