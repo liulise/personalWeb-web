@@ -22,6 +22,12 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
       // js loader
       {
         test: /\.js$/,

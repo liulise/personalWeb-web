@@ -4,5 +4,6 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Stamsel-Frontend" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../fork/mk-docs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../fork/react-webapp-startkit" vcs="Git" />
   </component>
 </project>
