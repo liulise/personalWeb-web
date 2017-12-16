@@ -1,0 +1,54 @@
+{
+  // 当前目录为顶层目录，不允许在向外查找
+  "root": true,
+  // 使用他人定义的规则 airbnb
+  "extends": "airbnb",
+  "plugins": ["react", "import"],
+  // 使用解析器为 babel-eslint
+  "parser": "babel-eslint",
+  // 可供访问的其他变量
+  "globals": {
+    // NODE_ENV
+    "env": false
+  },
+  "env": {
+    // 允许使用 es6全局变量
+    "es6": true,
+    // 允许使用 node全局变量，如：require
+    "node": true,
+    // 允许使用 浏览器全局变量
+    "browser": true
+  },
+
+  // 语法解析规则
+  "parserOptions": {
+    // js版本问es6
+    "ecmaVersion": 6,
+    // 代码为js模块
+    "sourceType": "module",
+    // 额外的语言特性
+    "ecmaFeatures": {
+      "jsx": true,
+      "globalReturn": true,
+      "impliedStrict": true
+    }
+  },
+
+  // settings配置项可供规则访问
+  "settings": {
+    // eslint中的插件eslint-plugin-import匹配import x from ''语法时，做静态检测，判断文件是否存在
+    "import/resolver": {
+      // 使用的解析器为 eslint-import-resolver-webpack
+      "webpack": {
+        // webpack 解析路径时所需文件
+        "config": "./webpack.config.js"
+      }
+    }
+  },
+
+  // 自定义规则
+  "rules": {
+    "global-require": 0,
+    "brace-style": [0, "allman", { "allowSingleLine": true }]
+  }
+}
