@@ -1,3 +1,4 @@
+// @link http://eslint.cn/
 {
   // 当前目录为顶层目录，不允许在向外查找
   "root": true,
@@ -49,6 +50,7 @@
   // 自定义规则
   "rules": {
     "global-require": 0,
-    "brace-style": [0, "allman", { "allowSingleLine": true }]
+    "brace-style": [2, "allman", { "allowSingleLine": true }],
+    "react/prefer-stateless-function": 0
   }
 }

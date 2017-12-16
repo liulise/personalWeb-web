@@ -9,7 +9,7 @@ const extractPlugin = new extractTextPlugin({ filename: 'static/css/[name].[cont
 
 module.exports = {
   entry: {
-    index: path.join(config.rootSrc, 'index.js')
+    index: path.join(config.rootSrc, 'index.jsx')
   },
 
   output: {
@@ -23,14 +23,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         enforce: "pre",                     // 匹配到ext为js文件，先eslint检测
         exclude: /node_modules/,
         loader: 'eslint-loader'
       },
       // js loader
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         include: [config.rootSrc],
         exclude: [/node_modules/]
@@ -121,7 +121,7 @@ module.exports = {
     host: 'localhost',
     overlay: {
       errors: true,                 // 打包出现错误时，将错误显示在浏览器端
-      warnings: true,               // 打包出现警告时，将错误显示在浏览器端
+      //warnings: true,               // 打包出现警告时，将错误显示在浏览器端
     },
   },
 

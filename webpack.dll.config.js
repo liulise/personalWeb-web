@@ -4,7 +4,7 @@ const config = require('./config');
 
 module.exports = {
   entry: {
-    vendor: ['babel-polyfill']
+    vendor: ['babel-polyfill', 'react', 'react-dom']
   },
 
   output: {
