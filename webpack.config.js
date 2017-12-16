@@ -9,7 +9,10 @@ const extractPlugin = new extractTextPlugin({ filename: 'static/css/[name].[cont
 
 module.exports = {
   entry: {
-    index: path.join(config.rootSrc, 'index.jsx')
+    index: [
+      `webpack-dev-server/client?http://localhost:${config.port}`,
+      path.join(config.rootSrc, 'index.jsx')
+    ]
   },
 
   output: {
