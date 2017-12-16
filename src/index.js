@@ -1,16 +1,14 @@
 import _ from 'lodash';
-import 'src/assets/css/index.css';  // 使用 css-loader 只能处理相对路径的文件
+import 'src/assets/css/index.css';// 使用 css-loader 只能处理相对路径的文件
 
 // 在js中如果想要获取图片地址，只能手动import，所以尽量使用背景和CDN
 import imgSrc from 'src/assets/images/bg.jpg';
 
 console.log(imgSrc);
 
-document.body.onclick = () =>
-{
+document.body.onclick = () => {
   // 通用的异步加载某模块, vue, react 有自己的加载方式
-  require.ensure(['src/part'], () =>
-  {
+  require.ensure(['src/part'], () => {
     console.log(require('src/part').a());
   });
 };

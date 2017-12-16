@@ -24,7 +24,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        enforce: "pre",
+        enforce: "pre",                     // 匹配到ext为js文件，先eslint检测
         exclude: /node_modules/,
         loader: 'eslint-loader'
       },
@@ -65,7 +65,7 @@ module.exports = {
         test: /\.(png|gif|jpg|jpeg)$/,
         loader: 'url-loader',
         options: {
-          limit: 9000,
+          limit: 8000,
           name: 'static/images/[name].[hash:8].[ext]'
         },
       },
@@ -117,7 +117,7 @@ module.exports = {
   ],
 
   devServer: {
-    port: 9000,
+    port: config.port,
     host: 'localhost',
     overlay: {
       errors: true,                 // 打包出现错误时，将错误显示在浏览器端
@@ -126,10 +126,9 @@ module.exports = {
   },
 
   resolve: {
+    modules: [config.rootSrc, 'node_modules'],  // 如果指定modules，引入模块只会 modules 下的目录查找
     extensions: ['.js', '.json'],
-    alias: {
-      'src': config.rootSrc,
-    }
+    alias: { src: config.rootSrc }
   },
 
   externals: {
