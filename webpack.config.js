@@ -10,7 +10,6 @@ const extractPlugin = new extractTextPlugin({ filename: 'static/css/[name].[cont
 module.exports = {
   entry: {
     index: [
-      `webpack-dev-server/client?http://localhost:${config.port}`,
       path.join(config.rootSrc, 'index.jsx')
     ]
   },
@@ -20,7 +19,7 @@ module.exports = {
     path: config.distSrc,
     filename: 'js/[name].[chunkhash].js',
     chunkFilename: 'js/[id].js',
-    publicPath: '/',
+    publicPath: config.publicPath,
   },
 
   module: {
@@ -89,7 +88,12 @@ module.exports = {
 
     new htmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(config.rootSrc, 'index.html')
+      template: path.resolve(config.rootSrc, 'index.html'),
+
+      title: '一抹萧然',
+      lodash: `<script src="${config.publicPath}static/js/lodash.min.js"></script>`,
+      vendor: `<script src="${config.publicPath}static/js/vendor.dll.js"></script>`,
+      bootstrap: `<link href="${config.publicPath}static/css/bootstrap.css" type="text/css" rel="stylesheet" />`
     }),
 
     new copyWebpackPlugin([{

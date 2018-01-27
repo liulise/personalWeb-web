@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../Stamsel-Frontend/.idea/Stamsel-Frontend.iml" filepath="$PROJECT_DIR$/../Stamsel-Frontend/.idea/Stamsel-Frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Stamsel-Frontend/.idea/Stamsel-Frontend.iml" filepath="$PROJECT_DIR$/../Stamsel-Frontend/.idea/Stamsel-Frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fork/meanTorrent/.idea/meanTorrent.iml" filepath="$PROJECT_DIR$/../fork/meanTorrent/.idea/meanTorrent.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/personalWeb-web.iml" filepath="$PROJECT_DIR$/.idea/personalWeb-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../web-app/.idea/web-app.iml" filepath="$PROJECT_DIR$/../web-app/.idea/web-app.iml" />
     </modules>
   </component>
 </project>

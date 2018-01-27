@@ -1,10 +1,18 @@
 import React from 'react';
+import bg from 'src/assets/images/bg.jpg';
+
+console.log(bg);
 
 class World extends React.Component
 {
   render()
   {
-    return <h2>ABC</h2>;
+    return (
+      <div>
+        <h2>ABC</h2>
+        <img src={bg} alt="" />
+      </div>
+    );
   }
 }
 

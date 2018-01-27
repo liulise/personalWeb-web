@@ -5,7 +5,7 @@
   // 使用他人定义的规则 airbnb
   "extends": "airbnb",
   "plugins": ["react", "import"],
-  // 使用解析器为 babel-eslint
+//   使用解析器为 babel-eslint
   "parser": "babel-eslint",
   // 可供访问的其他变量
   "globals": {
@@ -49,6 +49,7 @@
 
   // 自定义规则
   "rules": {
+    "no-console": 0,
     "global-require": 0,
     "brace-style": [2, "allman", { "allowSingleLine": true }],
     "react/prefer-stateless-function": 0
