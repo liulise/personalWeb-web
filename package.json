@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && set NODE_ENV=production&&webpack",
     "predev": "webpack --config webpack.dll.config.js",
-    "dev": "rimraf dist && set NODE_ENV=develop&&webpack-dev-server"
+    "dev": "rimraf dist && set NODE_ENV=develop&&webpack-dev-server",
+    "build": "rimraf dist && set NODE_ENV=production&&webpack",
+    "move": "node move.js"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^3.3.7",
     "lodash": "^4.17.4",

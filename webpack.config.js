@@ -106,12 +106,12 @@ module.exports = {
       minChunks: 2                    // 当至少2个模块包含js库时，将其打包为公共库vendor
     }),
 
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      sourceMap: false
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   },
+    //   sourceMap: false
+    // }),
 
     new webpack.DefinePlugin({
       env: config.NODE_ENV
@@ -142,5 +142,5 @@ module.exports = {
     'lodash': '_'           // externals中不会被webpack打包，_为lodash库暴露到全局的变量
   },
 
-  devtool: config.devtool
+  devtool: 'source-map' || config.devtool
 };
